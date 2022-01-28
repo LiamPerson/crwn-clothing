@@ -8,5 +8,5 @@ This app supports
     <li>Session persistence</li>
     <li>oAuth2 via Google</li>
 </ul>
-
-Live demo available here: <a href="https://crwnstore-live-demo.herokuapp.com/">https://crwnstore-live-demo.herokuapp.com/</a>
+<hr />
+<strong>Live demo available here: </strong><a href="https://crwnstore-live-demo.herokuapp.com/">https://crwnstore-live-demo.herokuapp.com/</a>
