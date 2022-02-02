@@ -1,5 +1,6 @@
 # CRWN Clothing
 <h3>This app is a single-page e-commerce application built with React, Redux, Firebase, SASS, Stripe.</h3>
+<h4>Leveraging: Redux Thunk, Redux Sagas, Styled Components, React Class Components, React Hooks</h4>
 
 This app supports
 <ul>
