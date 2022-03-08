@@ -2,7 +2,9 @@
 <h3>This app is a single-page e-commerce application built with React, Redux, Firebase, SASS, Stripe, NodeJS.</h3>
 <h4>Leveraging: Redux Thunk, Redux Sagas, Styled Components, Axios, React Class Components, React Hooks, NPM, Git</h4>
 
-This app supports
+<img src="/readme_files/preview.jpg" alt="Website preview" />
+
+This app supports:
 <ul>
     <li>Checkout with Stripe API</li>
     <li>User login and authentication</li>
