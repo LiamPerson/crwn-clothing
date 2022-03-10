@@ -35,6 +35,12 @@ export const MenuItemContainer = styled.div`
 
   @media screen and (max-width: 900px) {
     height: 200px;
+
+    &:hover {
+    & .content {
+      opacity: unset;
+    }
+  }
   }
 `;
 
@@ -57,6 +63,11 @@ export const ContentContainer = styled.div`
   background: white;
   opacity: 0.7;
   position: absolute;
+
+  @media screen and (max-width: 900px) {
+    opacity: 1;
+    padding: 0 15px;
+  }
 `;
 
 export const Title = styled.h1`
