@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import CollectionItem from '../../components/collection-item/collection-item.component';
 
 export const CollectionPageContainer = styled.div`
@@ -13,8 +13,15 @@ export const Title = styled.h2`
 
 export const Items = styled.div`
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  gap: 10px;
+
+  @media screen and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
 `;
 
 export const CustomCollectionItem = styled(CollectionItem)`

@@ -21,6 +21,7 @@
         "stripe": "6.28.0"
     },
     "devDependencies": {
+        "babel-plugin-styled-components": "^2.0.6",
         "concurrently": "^4.0.1",
         "nodemon": "^1.19.1"
     }

@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const CollectionPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 900px) {
+    align-items: center;
+  }
 `;
 
 export const TitleContainer = styled.h1`
@@ -15,4 +19,10 @@ export const TitleContainer = styled.h1`
 export const PreviewContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
 `;

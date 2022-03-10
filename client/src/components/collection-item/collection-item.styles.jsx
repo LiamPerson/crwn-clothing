@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import CustomButton from '../custom-button/custom-button.component';
 
 export const CollectionItemContainer = styled.div`
-  width: 22vw;
+  width: 21vw;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -17,6 +17,20 @@ export const CollectionItemContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      button {
+        opacity: unset;
+      }
     }
   }
 `;
@@ -47,11 +61,15 @@ export const PriceContainer = styled.span`
   width: 10%;
 `;
 
-export const CustomButtonContainer = styled(CustomButton)`
+export const AddToCart = styled(CustomButton)`
   width: 80%;
   opacity: 0.7;
   position: absolute;
   top: 255px;
   display: none;
 
+  @media screen and (max-width: 900px) {
+    opacity: 1;
+    display: block;
+  }
 `;
