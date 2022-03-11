@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const res = require('express/lib/response');
 const compression = require('compression');
+const enforce = require('express-sslify');
 
 // Load config.
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
@@ -12,12 +13,15 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Json decoode all requests, set urlencoded to true.
+// Use GZIP compression for sending files, json decoode all requests, set urlencoded to true.
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 if(process.env.NODE_ENV === 'production') {
+    // Require HTTPS
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
     // Server static files if in production
     app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -31,6 +35,10 @@ if(process.env.NODE_ENV === 'production') {
 app.listen(port, error => {
     if(error) throw error;
     console.log("Server running on port " + port);
+})
+
+app.get('/service-worker.js', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'))
 })
 
 // When a request gets sent to /payment endpoint...
